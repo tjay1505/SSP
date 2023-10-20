@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stock</title>
+    <link rel="stylesheet" href="./sass/index.css">
+    <link rel="shortcut icon" href="./assets/target.png" type="image/x-icon">
+</head>
+<body>
+    <div id="stock-header">
+        <div id="st-logo">
+            <img src="./assets/arrow.png" usemap="#home" alt="">
+            STOCK
+        </div>
+        <map name="#home">
+            <area shape="default" coords="" href="./index.html" alt="">
+        </map>
+        <div id="st-menu">
+            <img src="./assets/reload.png" onclick="stockUploading()" alt="">
+        </div>
+    </div>
+
+    <div id="stock-container">
+        <div class="st-con-head">
+            <h3>product at current stock</h3>
+        </div>
+        <div class="pro-preview">
+            <h4>blue shirt</h4> <span>23</span>
+        </div>
+    </div>
+
+    <script src="./venila.js"></script>
+
+</body>
+</html>

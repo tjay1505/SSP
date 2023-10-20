@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales</title>
+    <link rel="stylesheet" href="./sass/index.css">
+    <link rel="shortcut icon" href="./assets/target.png" type="image/x-icon">
+</head>
+<body>
+    
+    <div class="header-copy">
+        <div class="logo-copy">
+            <img src="./assets/arrow.png" usemap="#home" alt="">
+            SALES
+        </div>
+        <map name="#home">
+            <area shape="default" coords="" href="./index.html" alt="">
+        </map>
+        <div class="menu-copy">
+            <img src="./assets/menu.png" onclick="todayBillGenerate()" alt="">
+        </div>
+    </div>
+    
+    <div class="sale-metabar">
+        <div id="date" style="color: rgb(71, 71, 71);">
+            
+        </div>
+        <span id="totalsale">
+
+        </span>
+    </div>
+
+    <div class="saleNotes">
+        <div class="sale-container">
+            <div class="bill">
+                <h4>2 shirt , 1 jogars</h4> <h3> 1350 /-</h3>
+            </div>
+        </div>
+
+        <div class="addSale" onclick="openNewsale()">
+            <img src="./assets/add.png" alt="">
+            Add Sale
+        </div>
+    </div>
+
+    <div id="NewSale">
+        <div class="sale-tag">
+            <label for="product">product</label>
+            <input type="text" id="product" placeholder="type here...">
+        </div>
+        <div class="sale-tag">
+            <label for="quanty">quantity</label>
+            <input type="text" id="quanty" placeholder="type here...">
+        </div>
+        <div class="sale-tag">
+            <label for="amount">amount</label>
+            <input type="text" id="amount" placeholder="type here...">
+        </div>
+
+        <div class="btns">
+            <button onclick="closeNewsale()" >cancel</button>
+            <button onclick="stockAnalyser()">Add Sales</button>
+        </div>
+    </div>
+    
+    <script src="./venila.js"></script>
+    <script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '-' + mm + '-' + yyyy;
+    const dateDay = document.getElementById('date')
+    dateDay.innerText = today 
+
+    let currentDayTotalSale = 0
+
+    const totalsale = document.getElementById('totalsale')
+    totalsale.innerText = 'Today sale - '+ currentDayTotalSale
+
+    let todaySale = 'sale('+today+")"
+    console.log(todaySale);
+    
+
+    let BILL = {
+        bill1 : { products : '3 shirts,2 pant' , amount : 3500 } ,
+        bill2 : { products : '3 pant' , amount : 2350 } ,
+        bill3 : { products : '3 pant' , amount : 2350 } ,
+        bill4 : { products : '3 pant' , amount : 2350 } ,
+        bill5 : { products : '3 pant' , amount : 2350 } ,
+        bill6 : { products : '3 pant' , amount : 2350 } ,
+
+
+    }
+    BILL = JSON.stringify(BILL)
+
+    localStorage.setItem(todaySale,BILL)
+
+
+    BILL = JSON.parse(BILL)
+    //BILL = {...BILL , ...Bill3 }
+
+   // console.log(BILL);
+
+    function todayBillGenerate(){
+        BILL = JSON.parse(localStorage.getItem(todaySale))
+        let noOfBill = Object.keys(BILL).length + 1
+        console.log(noOfBill);
+        let demoBill = 'Bill'+noOfBill
+        let wer = demoBill
+        let x = 'pyyrt'
+        let y = 45
+        console.log(wer);
+        let dummyBill = {  }
+        dummyBill[wer] = {products : x , amount : y}
+        console.log(dummyBill);
+        
+
+        BILL = {...BILL , ...dummyBill}
+        BILL = JSON.stringify(BILL)
+        localStorage.setItem(todaySale,BILL)
+        BILL = JSON.parse(localStorage.getItem(todaySale))
+        console.log(BILL);
+    }
+
+    const newSale = document.getElementById('NewSale')
+    
+    function openNewsale(){
+        newSale.style.display = 'flex'
+        
+
+    }
+    function closeNewsale(){
+        newSale.style.display = 'none'
+
+    }
+    </script>
+    
+</body>
+</html>

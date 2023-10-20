@@ -1,0 +1,350 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+$f1:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$f2:Arial, Helvetica, sans-serif;
+
+%centy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//INDEX.HTML
+#header{
+    height: 12vh;
+    @extend %centy;
+    width: 100vw;
+    background-color: #e3e3e3;
+    justify-content: space-between;
+    #logo{
+        @extend %centy;
+        width: 60%;
+        height: 100%;
+        justify-content: flex-start;
+        padding-left: 2%;
+        font-size: 7vmin;
+        font-family: $f1;
+        img{
+            width: 10%;
+            margin-right: 2%
+        }
+
+    }
+    #menu{
+        @extend %centy;
+        justify-content: end;
+        width: 40%;
+        font-size: x-large;
+        font-family: $f2;
+        height: 100%;
+        img{
+            width: 15%;
+            margin-right: 5%;
+        }
+    }
+}
+#section{
+    height: 60vh;
+    @extend %centy;
+    justify-content: start;
+    flex-direction: column;
+    #stock{
+        margin-top: 5%;
+        @extend %centy;
+        height: 25%;
+        justify-content: space-evenly;
+        font-size: x-large;
+        font-family: $f2;
+        width: 60%;
+        position: relative;
+        z-index: 0;
+        border-radius: 1vmin;
+        border: 1px solid rgb(0, 0, 0);
+        a{
+            position:absolute ;
+            width: 100%;
+            z-index: 1;
+            background-color: #ffffff00;
+            height: 100%;
+            //visibility: hidden;
+        }
+        img{
+            width: 20%;
+        }
+    }
+    #stock:hover{
+        background-color: #000000;
+        border: 1px solid white;
+        color: #e3e3e3;
+
+    }
+    #sales{
+        margin-top: 5%;
+        @extend %centy;
+        height: 25%;
+        justify-content: space-evenly;
+        font-size: x-large;
+        font-family: $f2;
+        position: relative;
+        width: 60%;
+        border-radius: 1vmin;
+        border: 1px solid rgb(0, 0, 0);
+        img{
+            width: 20%;
+        }
+        a{
+            position:absolute ;
+            width: 100%;
+            z-index: 1;
+            background-color: #ffffff00;
+            height: 100%;
+            //visibility: hidden;
+        }
+    }
+    #sales:hover{
+        background-color: #000000;
+        color: #e3e3e3;
+        border: 1px solid white;
+    }
+    #product{
+        margin-top: 5%;
+        @extend %centy;
+        height: 25%;
+        justify-content: space-evenly;
+        font-size: x-large;
+        font-family: $f2;
+        position: relative;
+        width: 60%;
+        border-radius: 1vmin;
+        border: 1px solid rgb(0, 0, 0);
+        a{
+            position:absolute ;
+            width: 100%;
+            z-index: 1;
+            background-color: #ffffff00;
+            height: 100%;
+            //visibility: hidden;
+        }
+    }
+    #product:hover{
+        background-color: #000000;
+        color: #e3e3e3;
+        border: 1px solid white;
+    }
+
+}
+
+
+//Stock.HTML
+#stock-header,.header-copy{
+    height: 12vh;
+    @extend %centy;
+    width: 100vw;
+    background-color: #e3e3e3;
+    justify-content: space-between;
+    #st-logo,.logo-copy{
+        width: 60%;
+        @extend %centy;
+        font-size: 7vmin;
+        font-family: $f1;
+        justify-content: flex-start;
+        height: 100%;
+        img{
+            width: 12%;
+            margin:0 5%;
+        }
+    }
+    #st-menu,.menu-copy{
+        @extend %centy;
+        justify-content: flex-end;
+        width: 40%;
+        height: 100%;
+
+        img{
+            width: 15%;
+            margin-right: 5%;
+        }
+    }
+}
+#stock-container{
+    height: auto;
+    background-color: #c5c5c5;
+    margin-top: 5%;
+    @extend %centy;
+    flex-direction: column;
+    justify-content: start;
+    font-family: $f2;
+    
+    .st-con-head{
+        width: 90%;
+        background-color: #000000;
+        color: white;
+        height: 5vmin;
+        @extend %centy;
+        border-radius: 1vmin;
+        margin-top: 5%;
+
+    }
+    .pro-preview{
+        margin:5% 0 1% 0;
+        border: 1px solid rgb(0, 0, 0);
+        width: 65%;
+        height: 10vmin;
+        border-radius: 1vmin;
+        @extend %centy;
+        justify-content: space-between;
+        padding: 0 5%;
+    }
+}
+//////
+
+//STOCK.HTML
+
+//product.html
+
+#pro-header{
+    height: 100vh;
+    @extend %centy;
+    img{
+        width: 7%;
+        position: absolute;
+        top: 5vmin;
+        left: 5vmin;
+
+    }
+    #container{
+        width: 80%;
+        height: 60%;
+        @extend %centy;
+        justify-content: start;
+        flex-direction: column;
+        border-radius: 1vmin;
+        border: 1px solid ;
+        .tags{
+            @extend %centy;
+            justify-content: space-between;
+            font-size: large;
+            font-family: $f2;
+            width: 90%;
+            margin-top: 5%;
+            height: 10%;
+            input{
+                height: 80%;
+                width: 80%;
+                padding-left: 1%;
+            }
+        }
+    }
+}
+
+//SALES.html
+.sale-metabar{
+    background-color: rgb(0, 0, 0);
+    height: 9vmin;
+    font-family: $f2;
+    font-weight: 700;
+    @extend %centy;
+    justify-content: space-evenly;
+    div,span{
+        background-color: #dfdfdf;
+        border-radius: 1vmin;
+        padding: 1%;
+    }
+
+}
+
+.saleNotes{
+    height: 60vmin;
+    @extend %centy;
+    flex-direction: column;
+    .sale-container{
+        margin: 5% 0%;
+        width: 90%;
+        height: 90%;
+        border-radius: 1vmin;
+        background-color: #d9d9d9;
+        @extend %centy;
+        flex-direction: column;
+        justify-content: start;
+        .bill{
+            border-bottom: 0.5px solid grey;
+            width: 90%;
+            margin: 3% 0;
+            @extend %centy;
+            justify-content: space-between;
+            font-family: $f2;
+            padding:2%;
+        }
+    }
+}
+.addSale{
+    height: 10vmin;
+    border-radius: 1vmin;
+    width: 90%;
+    font-size: x-large;
+    font-family: $f2;
+    font-weight: 400;
+    @extend %centy;
+    color: white;
+    background-color: orangered;
+    img{
+        width: 5%;
+        margin: 0% 2%;
+        filter: invert(1);
+    }
+}
+.addSale:hover{
+    background-color: rgb(0, 128, 255);
+}
+
+#NewSale{
+    display: none;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    background-color: #000000d2;
+    @extend %centy;
+    flex-direction: column;
+    justify-content: start;
+    .sale-tag{
+        width: 80%;
+        color: white;
+        height: 5%;
+        font-family: $f2;
+        font-size: large;
+        @extend %centy;
+        justify-content: space-between;
+        margin-top: 5%;
+        input{
+            border-radius: 1vmin;
+            border: none;
+            padding-left: 2%;
+            width: 70%;
+            height: 100%;
+        }
+        
+    }
+    .btns{
+       // position: relative;
+        //top: 90px;
+        margin-top: 10%;
+        height: 10%;
+        width: 100%;
+        @extend %centy;
+        justify-content: space-evenly;
+        button{
+            height: 60%;
+            width: 30%;
+            font-size: large;
+            
+        }
+        button:hover{
+            background-color: orangered;
+        }
+    }
+    
+}
